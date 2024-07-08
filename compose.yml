@@ -1,0 +1,17 @@
+services:
+  backend:
+    build: Backend
+    volumes:
+      - ./Backend:/app
+    ports:
+      - 5000:5000
+    command: python api.py
+  
+  frontend:
+    image: chainguard/bun:latest
+    # build: frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - 5173:5173
+    command: bun run dev

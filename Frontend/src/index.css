@@ -1,0 +1,43 @@
+body {
+  background-color: #f8f9fa;
+}
+
+h1 {
+  color: #343a40;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.card-title {
+  text-align: center;
+  color: #007bff;
+}
+
+.mt-5 {
+  margin-top: 50px !important;
+}
+
+.list-group-item {
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.plot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
