@@ -17,7 +17,7 @@ const PredictionForm = () => {
   const [validated, setValidated] = useState(false);
 
   useEffect(() => {
-    axios.get('/api/coins')
+    axios.get('https://crypto-predictor-riel.onrender.com/api/coins')
       .then(response => {
         setCoins(response.data.coins);
         if (response.data.coins.length > 0) {
@@ -34,7 +34,7 @@ const PredictionForm = () => {
       event.stopPropagation();
     } else {
       try {
-        const response = await axios.post('/api/predict', { coin_id: coinId, days });
+        const response = await axios.post('https://crypto-predictor-riel.onrender.com/api/predict', { coin_id: coinId, days });
         setPredictions(response.data.predictions);
         setDates(response.data.dates);
         setPlotData(response.data.plot);
