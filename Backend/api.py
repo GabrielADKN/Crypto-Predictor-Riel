@@ -7,6 +7,8 @@ from models.prophet import predict_with_saved_model
 import logging
 from logging.handlers import RotatingFileHandler
 import sentry_sdk
+from flask_cors import CORS
+
 from sentry_sdk.integrations.flask import FlaskIntegration
 
 load_dotenv()
@@ -25,6 +27,8 @@ sentry_sdk.init(
     integrations=[FlaskIntegration()],
 )
 app = Flask(__name__)
+CORS(app)
+
 
 # Configure logging
 if not app.debug:  # Only set up logging in production
