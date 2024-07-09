@@ -50,7 +50,7 @@ def get_coins():
         coins_list = response.json()
         coins = [coin['id'] for coin in coins_list]
         response = jsonify({'coins': coins})
-        response['Access-Control-Allow-Origin'] = '*'
+        # response['Access-Control-Allow-Origin'] = '*'
         return response
     except requests.RequestException as e:
         app.logger.error('Error getting coins list: %s', str(e))
@@ -69,7 +69,7 @@ def predict():
         model_path = f"{coin_id}_prophet_model.pkl"
         predictions, dates, plot_json = predict_with_saved_model(coin_id, model_path, days)
         response =  jsonify({'predictions': predictions, 'dates': dates, 'plot': json.loads(plot_json)})
-        response['Access-Control-Allow-Origin'] = '*'
+        # response['Access-Control-Allow-Origin'] = '*'
         return response
     except ValueError as e:
         app.logger.error('ValueError in prediction: %s', str(e))
