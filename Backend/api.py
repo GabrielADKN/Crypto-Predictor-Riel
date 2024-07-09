@@ -27,7 +27,7 @@ sentry_sdk.init(
     integrations=[FlaskIntegration()],
 )
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "https://cryptopredictorfrontend.onrender.com"}})
 
 
 # Configure logging
