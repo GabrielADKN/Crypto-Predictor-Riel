@@ -45,7 +45,9 @@ def get_coins():
         response.raise_for_status()
         coins_list = response.json()
         coins = [coin['id'] for coin in coins_list]
-        return jsonify({'coins': coins})
+        response = jsonify({'coins': coins})
+        response['Access-Control-Allow-Origin'] = '*'
+        return response
     except requests.RequestException as e:
         app.logger.error('Error getting coins list: %s', str(e))
         return jsonify({'error': 'Failed to get coins list'}), 417
@@ -62,7 +64,9 @@ def predict():
     try:
         model_path = f"{coin_id}_prophet_model.pkl"
         predictions, dates, plot_json = predict_with_saved_model(coin_id, model_path, days)
-        return jsonify({'predictions': predictions, 'dates': dates, 'plot': json.loads(plot_json)})
+        response =  jsonify({'predictions': predictions, 'dates': dates, 'plot': json.loads(plot_json)})
+        response['Access-Control-Allow-Origin'] = '*'
+        return response
     except ValueError as e:
         app.logger.error('ValueError in prediction: %s', str(e))
         return jsonify({'error': str(e)}), 400
