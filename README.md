@@ -6,6 +6,8 @@ CryptoPredictor is a Flask-based web application that uses the Prophet library t
 
 
 ![CryptoPredictor](https://github.com/GabrielADKN/Crypto-Predictor-Riel/assets/55049118/0874b7ca-c244-4f9f-ab4a-3919a7cc76b1)
+[CryptoPredictor](https://cryptopredictorfrontend.onrender.com/)
+
 
 
 ## 2. Table of Contents
