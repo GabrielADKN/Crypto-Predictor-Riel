@@ -93,3 +93,4 @@ werkzeug==3.0.3
     # via flask
 gunicorn==22.0.0
 Flask-Cors==4.0.1
+flask-testing
