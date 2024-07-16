@@ -20,14 +20,15 @@ const NavigationBar = () => {
 
     return (
         <Navbar bg="light" expand="lg" className="navbar-custom">
-            <Navbar.Brand as={Link} to="/predict" className="navbar-brand">CryptoPredictor</Navbar.Brand>
+            <Navbar.Brand as={Link} to="/" className="navbar-brand">CryptoPredictor</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="ml-auto">
+                    <Nav.Link as={Link} to="/">Home</Nav.Link>
                     {isAuthenticated ? (
                         <>
                             <Nav.Link as={Link} to="/predict">Predict</Nav.Link>
-                            <Button variant="outline-danger" onClick={handleLogout}>Logout</Button>
+                            <Button variant="outline-light" onClick={handleLogout} className="ml-2">Logout</Button>
                         </>
                     ) : (
                         <>
