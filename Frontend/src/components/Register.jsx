@@ -19,7 +19,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:5000/register', { username, email, password });
+            await axios.post('https://crypto-predictor-riel.onrender.com/register', { username, email, password });
             navigate('/login');
         } catch (error) {
             setError(error.response.data.message || 'Registration failed');

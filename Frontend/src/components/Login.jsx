@@ -19,7 +19,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/login', { email, password });
+            const response = await axios.post('https://crypto-predictor-riel.onrender.com/login', { email, password });
             const { access_token } = response.data;
             localStorage.setItem('token', access_token);
             login({ token: access_token });
