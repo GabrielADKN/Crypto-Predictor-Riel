@@ -5,6 +5,7 @@ import Register from './components/Register';
 import PredictionForm from './components/PredictionForm';
 import PrivateRoute from './components/PrivateRoute';
 import NavigationBar from './components/Navbar';
+import Home from './components/Home';
 import { AuthProvider } from './context/AuthContext';
 
 /**
@@ -18,6 +19,7 @@ const App = () => {
             <Router>
                 <NavigationBar />
                 <Routes>
+                    <Route path="/" element={<Home />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/predict" element={<PrivateRoute element={<PredictionForm />} />} />
